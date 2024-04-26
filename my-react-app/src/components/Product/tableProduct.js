@@ -2,9 +2,11 @@ import React from 'react'
 
 const tableProduct = () => {
   return (
-    <div>
-        <h2>table Product</h2>
-    </div>
+      <div>
+        <h2>
+          tableProduct
+        </h2>
+      </div>
   )
 }
 
