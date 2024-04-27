@@ -17,8 +17,8 @@ function App() {
         <Routes>
           <Route exact path='/listProduct' Component={tableProduct} />
           <Route path='/addProduct' Component={addProduct} />
-          <Route path='/viewProduct' Component={viewProduct} />
-          <Route path='/editProduct' Component={editProduct} />
+          <Route path='/viewProduct/:id' Component={viewProduct} />
+          <Route path='/editProduct/:id' Component={editProduct} />
         </Routes>
       </div>
     </BrowserRouter>
