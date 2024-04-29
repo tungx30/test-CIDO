@@ -1,6 +1,6 @@
 input[type="text"],
 input[type="number"],
-input[type="date"],
+input[type="datetime-local"],
 input[type="url"],
 select {
   width: 350px;

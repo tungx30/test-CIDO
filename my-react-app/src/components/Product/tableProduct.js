@@ -12,7 +12,7 @@ const TableProduct = () => {
     try {
       let mounted = true;
        const items = await service.getAllProduct();
-      console.log("1", items);
+      //console.log("1", items);
       await setProduct(items.data.product);
       return () => {
         mounted = false;
@@ -34,6 +34,11 @@ const TableProduct = () => {
       .catch((err) => {
         console.log(err);
       });
+  };
+  const handleEdit = (id) => {
+    //console.log(" 1");
+    window.location.href = `/editProduct/${id}`;
+
   };
 
   return (
@@ -68,9 +73,8 @@ const TableProduct = () => {
               <td>{product.expirationDate}</td>
               <td>{product.dateOfManufacture}</td>
               <td style={{ display: "flex", flexDirection: "row" }}>
-                <Link to={`/editProduct/${product._id}`}>
-                  <button className="btn-edit">Edit Product</button>
-                </Link>
+                
+                  <button className="btn-edit" onClick={()=>handleEdit(product._id)}>Edit Product</button>
                 <button className="btn-delete" onClick={()=>handleDelete(product._id)}>Delete Product</button>
                 <Link to={`/viewProduct/${product._id}`}>
                   <button className="btn-view" >View Product</button>

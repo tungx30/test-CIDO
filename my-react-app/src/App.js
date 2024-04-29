@@ -8,6 +8,7 @@ import editProduct from './components/Product/editProduct';
 import { ToastContainer} from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/Product/Header';
+import EditProduct from './components/Product/editProduct';
 function App() {
   return (
     <BrowserRouter>
@@ -18,7 +19,7 @@ function App() {
           <Route exact path='/listProduct' Component={tableProduct} />
           <Route path='/addProduct' Component={addProduct} />
           <Route path='/viewProduct/:id' Component={viewProduct} />
-          <Route path='/editProduct/:id' Component={editProduct} />
+          <Route path='/editProduct/:id' Component={EditProduct} />
         </Routes>
       </div>
     </BrowserRouter>

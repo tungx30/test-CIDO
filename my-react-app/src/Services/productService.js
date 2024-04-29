@@ -11,7 +11,11 @@ export const  getAllProduct= async ()=>{
 }
 
 export const doProduct= async(value)=>{
+    //console.log("1111", value);
+//console.log("1111", JSON.stringify(value));
     let user=await axios.post("http://localhost:4000/api/product/createProduct",value);
+    //console.log("222222");
+    //console.log("1111"+user.data);
     return user.status;
 }
 
@@ -24,4 +28,14 @@ export const updateProduct=async(id,value)=>{
 export const deleteProduct =async (id)=>{
     let result =await axios.delete("http://localhost:4000/api/product/deleteProduct/"+id);
     return result.data;
+}
+
+export const findByIdProduct=async(id)=>{
+    try {
+        let result =await axios.get("http://localhost:4000/api/product/getProductId/"+id);
+        //console.log("1111", JSON.stringify(result));
+        return result.data;
+    } catch (error) {
+        console.log(error);
+    }
 }
